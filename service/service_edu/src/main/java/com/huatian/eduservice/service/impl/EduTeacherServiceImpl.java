@@ -16,10 +16,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeacher> implements EduTeacherService {
-
-
-
-
-
-
+    
 }
