@@ -31,7 +31,8 @@ import java.util.Map;
 @RestController
 @Api(description = "讲师管理")
 @EnableSwagger2
-@RequestMapping("/eduService/edu-teacher")
+@RequestMapping("/eduService/teacher")
+@CrossOrigin//解决跨域
 public class EduTeacherController {
 
     @Autowired
