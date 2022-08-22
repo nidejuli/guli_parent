@@ -1,9 +1,10 @@
 package com.huatian.eduservice.controller;
 
+
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.huatian.commonUtils.R;
+import com.huatian.commonUtils.Result;
 import com.huatian.eduservice.entity.EduTeacher;
 import com.huatian.eduservice.entity.vo.TeacherQuery;
 import com.huatian.eduservice.service.EduTeacherService;
@@ -31,7 +32,7 @@ import java.util.Map;
 @RestController
 @Api(description = "讲师管理")
 @EnableSwagger2
-@RequestMapping("/eduService/teacher")
+@RequestMapping("dev-api/eduService/teacher")
 @CrossOrigin//解决跨域
 public class EduTeacherController {
 
@@ -41,45 +42,45 @@ public class EduTeacherController {
     //查询所有讲师表的数据
     @ApiOperation("查询讲师表的数据")
     @RequestMapping(value = "/findAllEduTeacher", method = RequestMethod.GET)
-    public R findAllEduTeacher() {
+    public Result findAllEduTeacher() {
         List<EduTeacher> list = eduTeacherService.list(null);
         Map<String, Object> result = new HashMap<>();
         result.put("item", list);
-        return R.ok().data(result);
+        return Result.ok().data(result);
     }
 
     //根据id逻辑删除讲师表数据
     @ApiOperation("根据id逻辑删除讲师表数据")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public R deleteId(@PathVariable String id) {
+    public Result deleteId(@PathVariable String id) {
         boolean b = eduTeacherService.removeById(id);
         if (b) {
-            return R.ok();
+            return Result.ok();
         }
-        return R.error();
+        return Result.error();
     }
 
 
     //分页查询讲师的数据
     @ApiOperation("分页查询讲师的数据")
     @RequestMapping(value = "/pageTeacher/{page}/{pageSize}", method = RequestMethod.GET)
-    public R pageTeacher(@ApiParam("当前页码") @PathVariable long page,
-                         @ApiParam("每页大小") @PathVariable long pageSize) {
+    public Result pageTeacher(@ApiParam("当前页码") @PathVariable long page,
+                              @ApiParam("每页大小") @PathVariable long pageSize) {
         //创建page对象
         Page<EduTeacher> eduTeacherPage = new Page<>(page, pageSize);
         eduTeacherService.page(eduTeacherPage, null);
         Map<String, Object> result = new HashMap<>();
         result.put("total", eduTeacherPage.getTotal());
         result.put("items", eduTeacherPage.getRecords());
-        return R.ok().data(result);
+        return Result.ok().data(result);
     }
 
     //条件查询分页讲师的数据
     @ApiOperation("条件查询分页讲师的数据")
     @RequestMapping(value = "/pageTeacherCondition/{page}/{pageSize}", method = RequestMethod.POST)
-    public R pageTeacherCondition(@ApiParam("当前页码") @PathVariable long page,
-                                  @ApiParam("每页大小") @PathVariable long pageSize,
-                                  @RequestBody(required = false) TeacherQuery teacherQuery) {
+    public Result pageTeacherCondition(@ApiParam("当前页码") @PathVariable long page,
+                                       @ApiParam("每页大小") @PathVariable long pageSize,
+                                       @RequestBody(required = false) TeacherQuery teacherQuery) {
         //创建page对象
         Page<EduTeacher> eduTeacherPage = new Page<>(page, pageSize);
         LambdaQueryWrapper<EduTeacher> queryWrapper = new QueryWrapper<EduTeacher>().lambda()
@@ -91,47 +92,47 @@ public class EduTeacherController {
         Map<String, Object> result = new HashMap<>();
         result.put("total", eduTeacherPage.getTotal());
         result.put("items", eduTeacherPage.getRecords());
-        return R.ok().data(result);
+        return Result.ok().data(result);
     }
 
     //添加数据
     @ApiOperation("添加讲师数据")
     @RequestMapping(value = "/addTeacher", method = RequestMethod.POST)
-    public R addTeacher(@RequestBody EduTeacher eduTeacher) {
+    public Result addTeacher(@RequestBody EduTeacher eduTeacher) {
         boolean save = eduTeacherService.save(eduTeacher);
         if (save) {
-            return R.ok();
+            return Result.ok();
         }
-        return R.error();
+        return Result.error();
     }
 
     //根据id获取讲师数据
     @ApiOperation("根据id获取讲师数据")
     @RequestMapping(value = "/getTeacherById/{id}", method = RequestMethod.GET)
-    public R getTeacherById(@PathVariable String id) {
+    public Result getTeacherById(@PathVariable String id) {
         EduTeacher eduTeacher = eduTeacherService.getById(id);
-        try {
-            int i = 10 / 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-            //执行自定义异常
-            throw new GuLiException(20001, "执行了自定义异常处理");
-        }
+//        try {
+//            int i = 10 / 0;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            //执行自定义异常
+//            throw new GuLiException(20001, "执行了自定义异常处理");
+//        }
         HashMap<String, Object> result = new HashMap<>();
         result.put("eduTeacher", eduTeacher);
-        return R.ok().data(result);
+        return Result.ok().data(result);
     }
 
 
     //根据id修改讲师数据
     @ApiOperation("修改讲师数据")
     @RequestMapping(value = "/updateTeacher", method = RequestMethod.POST)
-    public R updateTeacher(@RequestBody EduTeacher eduTeacher) {
+    public Result updateTeacher(@RequestBody EduTeacher eduTeacher) {
         boolean result = eduTeacherService.updateById(eduTeacher);
         if (result) {
-            return R.ok();
+            return Result.ok();
         }
-        return R.error();
+        return Result.error();
     }
 }
 

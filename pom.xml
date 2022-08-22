@@ -5,11 +5,12 @@
     <groupId>com.huatian</groupId>
     <artifactId>guli_parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <modules>
         <module>common</module>
+        <module>service</module>
     </modules>
     <name>guli_parent</name>
-    <packaging>pom</packaging>
     <description>Demo project for Spring Boot</description>
 
     <!-- 对依赖版本进行管理 -->

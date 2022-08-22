@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Data
-public class R {
+public class Result {
     @ApiModelProperty(value = "是否成功")
     private Boolean success;
 
@@ -21,25 +21,25 @@ public class R {
     private Map<String, Object> data = new HashMap<String, Object>();
 
     //把构造方法私有化
-    private R() {
+    private Result() {
     }
 
     //成功静态方法
-    public static R ok() {
-        R r = new R();
-        r.setSuccess(true);
-        r.setCode(ResultCode.SUCCESS);
-        r.setMessage("成功");
-        return r;
+    public static Result ok() {
+        Result result = new Result();
+        result.setSuccess(true);
+        result.setCode(ResultCode.SUCCESS);
+        result.setMessage("成功");
+        return result;
     }
 
     //失败静态方法
-    public static R error() {
-        R r = new R();
-        r.setSuccess(false);
-        r.setCode(ResultCode.ERROR);
-        r.setMessage("失败");
-        return r;
+    public static Result error() {
+        Result result = new Result();
+        result.setSuccess(false);
+        result.setCode(ResultCode.ERROR);
+        result.setMessage("失败");
+        return result;
     }
 
 
@@ -48,22 +48,22 @@ public class R {
      * 例如：Result.ok().success(false).code(200).message("成功").data(new HashMap<String, Object>());
      */
 
-    public R success(Boolean success) {
+    public Result success(Boolean success) {
         this.setSuccess(success);
         return this;
     }
 
-    public R code(Integer code) {
+    public Result code(Integer code) {
         this.setCode(code);
         return this;
     }
 
-    public R message(String message) {
+    public Result message(String message) {
         this.setMessage(message);
         return this;
     }
 
-    public R data(Map<String, Object> data) {
+    public Result data(Map<String, Object> data) {
         this.setData(data);
         return this;
     }
