@@ -26,6 +26,7 @@ public class EduLoginController {
         map.put("roles", "[admin]");
         map.put("name", "admin");
         map.put("avatar", "http://yhstore.top/oneblog/20210823181042333.png");
+        map.put("introduction","hahahhah");
         return Result.ok().data(map);
     }
 }
