@@ -1,6 +1,7 @@
 package com.huatian.eduservice.controller;
 
 
+import com.baomidou.mybatisplus.extension.api.R;
 import com.huatian.commonUtils.Result;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,5 +29,11 @@ public class EduLoginController {
         map.put("avatar", "http://yhstore.top/oneblog/20210823181042333.png");
         map.put("introduction","hahahhah");
         return Result.ok().data(map);
+    }
+
+    // 登出
+    @PostMapping("/logout")
+    public Result logOut() {
+        return Result.ok();
     }
 }
