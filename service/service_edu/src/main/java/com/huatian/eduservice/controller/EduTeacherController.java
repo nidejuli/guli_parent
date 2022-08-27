@@ -50,7 +50,7 @@ public class EduTeacherController {
 
     //根据id逻辑删除讲师表数据
     @ApiOperation("根据id逻辑删除讲师表数据")
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "removeTeacherById/{id}", method = RequestMethod.DELETE)
     public Result deleteId(@PathVariable String id) {
         boolean b = eduTeacherService.removeById(id);
         if (b) {
@@ -86,7 +86,8 @@ public class EduTeacherController {
                 .like(StringUtils.isNotEmpty(teacherQuery.getName()), EduTeacher::getName, teacherQuery.getName())
                 .eq(teacherQuery.getLevel() != null, EduTeacher::getLevel, teacherQuery.getLevel())
                 .gt(StringUtils.isNotEmpty(teacherQuery.getBegin()), EduTeacher::getGmtCreate, teacherQuery.getBegin())
-                .lt(StringUtils.isNotEmpty(teacherQuery.getEnd()), EduTeacher::getGmtModified, teacherQuery.getEnd());
+                .lt(StringUtils.isNotEmpty(teacherQuery.getEnd()), EduTeacher::getGmtModified, teacherQuery.getEnd())
+                .orderByDesc(EduTeacher::getGmtCreate);//按照创建时间倒序排序
         eduTeacherService.page(eduTeacherPage, queryWrapper);
         Map<String, Object> result = new HashMap<>();
         result.put("total", eduTeacherPage.getTotal());

@@ -21,14 +21,9 @@
     </properties>
 
     <dependencies>
-        <dependency><!--在service_edu中引入，可以使用swagger-->
-            <groupId>com.huatian</groupId>
-            <artifactId>service_base</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>com.huatian</groupId>
-            <artifactId>common_utils</artifactId>
+            <artifactId>service_base</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!-- 负载均衡 -->

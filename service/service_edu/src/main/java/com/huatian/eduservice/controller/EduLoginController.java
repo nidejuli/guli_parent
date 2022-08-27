@@ -1,10 +1,7 @@
 package com.huatian.eduservice.controller;
 
-
-import com.baomidou.mybatisplus.extension.api.R;
 import com.huatian.commonUtils.Result;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.HashMap;
 import java.util.Map;
 
