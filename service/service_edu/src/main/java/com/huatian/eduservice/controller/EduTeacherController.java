@@ -8,7 +8,6 @@ import com.huatian.commonUtils.Result;
 import com.huatian.eduservice.entity.EduTeacher;
 import com.huatian.eduservice.entity.vo.TeacherQuery;
 import com.huatian.eduservice.service.EduTeacherService;
-import com.huatian.servicebase.exceptionHandler.GuLiException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
