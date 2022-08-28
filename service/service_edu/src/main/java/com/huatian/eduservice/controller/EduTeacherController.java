@@ -111,15 +111,8 @@ public class EduTeacherController {
     @RequestMapping(value = "/getTeacherById/{id}", method = RequestMethod.GET)
     public Result getTeacherById(@PathVariable String id) {
         EduTeacher eduTeacher = eduTeacherService.getById(id);
-//        try {
-//            int i = 10 / 0;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            //执行自定义异常
-//            throw new GuLiException(20001, "执行了自定义异常处理");
-//        }
         HashMap<String, Object> result = new HashMap<>();
-        result.put("eduTeacher", eduTeacher);
+        result.put("teacher", eduTeacher);
         return Result.ok().data(result);
     }
 
