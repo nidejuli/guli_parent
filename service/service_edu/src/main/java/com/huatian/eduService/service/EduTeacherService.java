@@ -1,6 +1,6 @@
-package com.huatian.eduservice.service;
+package com.huatian.eduService.service;
 
-import com.huatian.eduservice.entity.EduTeacher;
+import com.huatian.eduService.entity.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

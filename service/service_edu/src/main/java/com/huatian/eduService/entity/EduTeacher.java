@@ -1,4 +1,4 @@
-package com.huatian.eduservice.entity;
+package com.huatian.eduService.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 

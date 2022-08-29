@@ -1,4 +1,4 @@
-package com.huatian.eduservice;
+package com.huatian.eduService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

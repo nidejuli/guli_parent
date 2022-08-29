@@ -1,6 +1,6 @@
-package com.huatian.eduservice.mapper;
+package com.huatian.eduService.mapper;
 
-import com.huatian.eduservice.entity.EduTeacher;
+import com.huatian.eduService.entity.EduTeacher;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

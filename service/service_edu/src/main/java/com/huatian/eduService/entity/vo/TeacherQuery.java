@@ -1,4 +1,4 @@
-package com.huatian.eduservice.entity.vo;
+package com.huatian.eduService.entity.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

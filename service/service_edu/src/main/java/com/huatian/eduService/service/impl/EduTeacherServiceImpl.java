@@ -1,8 +1,8 @@
-package com.huatian.eduservice.service.impl;
+package com.huatian.eduService.service.impl;
 
-import com.huatian.eduservice.entity.EduTeacher;
-import com.huatian.eduservice.mapper.EduTeacherMapper;
-import com.huatian.eduservice.service.EduTeacherService;
+import com.huatian.eduService.entity.EduTeacher;
+import com.huatian.eduService.mapper.EduTeacherMapper;
+import com.huatian.eduService.service.EduTeacherService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

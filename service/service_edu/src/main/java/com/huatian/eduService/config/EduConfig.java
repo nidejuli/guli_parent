@@ -1,13 +1,12 @@
-package com.huatian.eduservice.config;
+package com.huatian.eduService.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("com/huatian/eduservice/mapper")
+@MapperScan("com/huatian/eduService/mapper")
 public class EduConfig {
 
     /**

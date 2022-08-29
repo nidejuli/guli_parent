@@ -1,4 +1,4 @@
-package com.huatian.eduservice.controller;
+package com.huatian.eduService.controller;
 
 import com.huatian.commonUtils.Result;
 import org.springframework.web.bind.annotation.*;

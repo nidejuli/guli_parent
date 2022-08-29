@@ -1,13 +1,13 @@
-package com.huatian.eduservice.controller;
+package com.huatian.eduService.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.huatian.commonUtils.Result;
-import com.huatian.eduservice.entity.EduTeacher;
-import com.huatian.eduservice.entity.vo.TeacherQuery;
-import com.huatian.eduservice.service.EduTeacherService;
+import com.huatian.eduService.entity.EduTeacher;
+import com.huatian.eduService.entity.vo.TeacherQuery;
+import com.huatian.eduService.service.EduTeacherService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
