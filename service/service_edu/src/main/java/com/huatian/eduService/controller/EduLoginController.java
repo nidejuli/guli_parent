@@ -1,11 +1,13 @@
 package com.huatian.eduService.controller;
 
 import com.huatian.commonUtils.Result;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@Api(description = "登陆管理")
 @RequestMapping("eduService/user")
 @CrossOrigin
 public class EduLoginController {
