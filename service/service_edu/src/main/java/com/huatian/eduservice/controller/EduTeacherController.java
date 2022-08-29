@@ -87,7 +87,7 @@ public class EduTeacherController {
                 .eq(teacherQuery.getLevel() != null, EduTeacher::getLevel, teacherQuery.getLevel())
                 .gt(StringUtils.isNotEmpty(teacherQuery.getBegin()), EduTeacher::getGmtCreate, teacherQuery.getBegin())
                 .lt(StringUtils.isNotEmpty(teacherQuery.getEnd()), EduTeacher::getGmtModified, teacherQuery.getEnd())
-                .orderByDesc(EduTeacher::getGmtCreate);//按照创建时间倒序排序
+                .orderByDesc(EduTeacher::getGmtModified);//按照创建时间倒序排序
         eduTeacherService.page(eduTeacherPage, queryWrapper);
         Map<String, Object> result = new HashMap<>();
         result.put("total", eduTeacherPage.getTotal());
