@@ -22,7 +22,7 @@ import java.util.Map;
 @RestController
 @EnableSwagger2
 @Api(description = "oss管理")
-@RequestMapping("/oss")
+@RequestMapping("/eduOss")
 @CrossOrigin
 public class OssController {
 
