@@ -23,9 +23,12 @@ public class EduSubjectController {
 
     @ApiOperation("添加课程科目")
     @RequestMapping(value = "/addSubject", method = RequestMethod.POST)
-    public Result addSubject(MultipartFile file){
+    public Result addSubject(MultipartFile file) {
 
         eduSubjectService.addSubject(file);
         return Result.ok();
     }
+
+
+
 }

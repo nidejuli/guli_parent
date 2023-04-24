@@ -12,6 +12,11 @@
     <artifactId>service_oss</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.huatian</groupId>
+            <artifactId>common_utils</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!-- 阿里云 OSS 依赖 -->
         <dependency>
             <groupId>com.aliyun.oss</groupId>
