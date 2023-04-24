@@ -11,7 +11,7 @@ public class EduConfig {
 
     /**
      * 分页插件
-     * 测试 
+     * 测试
      */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
